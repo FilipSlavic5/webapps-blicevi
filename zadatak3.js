@@ -1,13 +1,7 @@
-let scores = [
-    9, 80, 10, 20, 5, 70
-];
-scores.sort((a, b) => a - b);
+const arr = [9, 5, '2', 'ab', '3', -1];
 
-let animals = [
-    'cat', 'dog', 'elephant', 'bee', 'ant'
-];
-animals.sort();
+const nums = arr.filter(n => typeof n == "number").sort((a, b) => a - b); 
+const non_nums = arr.filter(x => typeof x != "number").sort(); 
 
-console.log(animals);
-
-console.log(scores);
+const res = [...nums, ...non_nums]; // combine the two arrays
+console.log(res); // [-1, 5, 9, "2", "3", "ab"]
